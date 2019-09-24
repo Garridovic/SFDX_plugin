@@ -1,0 +1,9 @@
+{
+    "orgName": "SFDX Plugin meetup Company",
+    "edition": "Developer",
+    "settings": { 
+        "orgPreferenceSettings": {
+            "s1DesktopEnabled": true
+    }},
+    "language": "en_US"
+}

@@ -1,0 +1,36 @@
+<apex:page controller="DemoPageController" lightningStylesheets="true" showHeader="true" sidebar="true">
+	<script>
+		function setFocusOnLoad(){}
+	</script>
+
+	<apex:form>
+		<apex:sectionHeader title="Input form" />
+
+		<apex:pageBlock>
+			<apex:pageMessages id="pageMessages"/>
+
+			<apex:outputPanel id="outputPanelPageBlockSection">
+				<apex:pageBlockSection >
+					<apex:inputText value="{!wrapper.accountName}" label="Account name"/>
+					<apex:inputText value="{!wrapper.contactName}" label="Contact name"/>
+				</apex:pageBlockSection>
+			</apex:outputPanel>
+
+			<div style="overflow: scroll; max-height: 60vh;">
+				<apex:pageBlockTable id="pageBlockTable" value="{!prices}" var="price">
+					<apex:column headerValue="Name">
+						<apex:outputLink value="/{!price.productId }">{!price.productName }</apex:outputLink>
+					</apex:column>
+					<apex:column headerValue="Price">
+						<apex:outputText value="{! price.productPrice }"/>
+					</apex:column>
+					<apex:column headerValue="Check">
+						<apex:inputCheckbox value="{!price.checked}"/>
+					</apex:column>
+				</apex:pageBlockTable>
+			</div>
+
+			<apex:commandButton action="{!processInfo}" value="Process" style="margin-top:10px"/>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

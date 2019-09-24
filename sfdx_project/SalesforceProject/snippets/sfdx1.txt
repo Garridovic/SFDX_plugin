@@ -1,0 +1,49 @@
+// Create sfdx project
+	sfdx force:project:create --projectname mywork
+
+// Connect to devHub and set it as default devHub org
+	sfdx force:auth:web:login -d
+
+// Convert SFDX project to metadata api project (scratch org --> normal org)
+	sfdx force:source:convert --outputdir <outputDir>
+
+// Convert metadata api project to SFDX project (normal org ---> scratch org)
+	sfdx force:mdapi:convert
+
+// Push sfdx project to scratch org
+	sfdx force:source:push -u  <username> -f
+
+// Push metadata project to org (metadata api)
+	sfdx force:mdapi:deploy -u  <username>
+
+// Get metadata deploy status
+	sfdx force:mdapi:deploy:report
+
+// Pull metadata from scratch org (to pull permset for instance)
+	sfdx force:source:pull -u <username>
+
+//  Plugin commands
+	 // Retrieve metadata from devHub Org
+	 // Convert to sfdx
+	 // Create scratch org (if no one given)
+	 // Deploy to scratch org
+	 // Insert Data
+	    // insert fixed set of data
+	    // Or read from given csv...
+	 // Assign PermisionSet
+
+// Create a package
+	 sfdx force:package:create --name "Demo Package" --path force-app --packagetype Unlocked --targetdevhubusername vgarrido-dreamole19@dreamole.com
+
+// Update package
+	sfdx force:package:update --package 0Ho1i000000PAu4CAGr
+
+// Create a package version
+	sfdx force:package:version:create -p 0Ho1i000000PAu4CAG -x
+
+// Invoke apex through sfdx
+	sfdx force:apex:execute -f ~/test.apex
+
+// Use of plugin
+	sfdx org:setup --permissionsetname "PreSales" --hookfile ./anonymousCode/AnonClass.cls --package 04t1i0000011bPXAAY --scratchusername test-2yfbaor5z7rz@example.com
+

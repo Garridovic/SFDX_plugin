@@ -1,0 +1,32 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": false,
+            "package": "Demo Package",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT"
+        },
+        {
+            "path": "force-app",
+            "package": "DreamOlePackage",
+            "versionName": "No ProfileSessionSettings",
+            "versionNumber": "0.2.0.NEXT",
+            "default": false
+        },
+        {
+            "path": "force-app",
+            "package": "DreamOleSalesPackage",
+            "versionName": "0.2",
+            "versionNumber": "0.2.1.NEXT",
+            "default": true
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "45.0",
+    "packageAliases": {
+        "DreamOleSalesPackage": "0Ho1i000000PAu4CAG",
+        "DreamOleSalesPackage@v2": "04t1i0000011bPXAAY"
+    }
+}
